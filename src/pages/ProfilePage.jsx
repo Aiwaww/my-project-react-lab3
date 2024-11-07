@@ -42,7 +42,7 @@ const ProfilePage = () => {
       <div className="profile-info">
         <div>
           <h2>Personal Data</h2>
-          <p>Email: {userData?.email || '<email>'}</p>
+          <p>Email: {getItem('EMAIL') || '<email>'}</p>
         </div>
         <img
           className="user-img"

@@ -3,6 +3,7 @@ import { MyButton } from './MyButton';
 import { MyInput } from './MyInput';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { setItem } from '../helper/localStore';
 
 export const RegisterForm = () => {
   const navigate = useNavigate();
