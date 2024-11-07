@@ -24,19 +24,30 @@ module.exports = {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        type: 'asset/resource',
+      },
     ],
   },
   resolve: {
     extensions: ['.js', '.jsx'],
   },
   devServer: {
-    static: './dist',
+    static: {
+      directory: path.join(__dirname, 'dist'),
+      publicPath: '/',
+    },
     port: 3000,
     open: true,
+    historyApiFallback: {
+      index: '/index.html',
+    },
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html',
+      filename: 'index.html',
     }),
   ],
 };
